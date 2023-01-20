@@ -55,8 +55,11 @@ class BinaryTreeNode:
         # Traversing the tree 树的遍历
                 # 三种最常用的遍历
                     # Pre-order Traversal 前序遍历
+                        # 先访问根节点，然后递归的前序访问左子树，然后前序访问右子树
                     # In-order Traversal 中序遍历
+                        # 先递归的中序访问左子树，然后根节点，最后中序访问右子树
                     # Post-order Traversal 后序遍历
+                        # 先递归的后序访问左子树，再后序访问右子树，最后访问根节点
                 # 一种单独的遍历
                     # Level Order Traversal 层次遍历
 # Auxiliary operation of Tree

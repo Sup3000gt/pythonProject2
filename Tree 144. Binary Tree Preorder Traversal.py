@@ -25,7 +25,7 @@ class Solution:
         return result       # 最后返回 result
 
     # 方法2:递归
-    """class Solution:
+    class Solution:
         def preorderTraversal(self, root: TreeNode) -> List[int]:
             def preorder(root: TreeNode):
                 if not root:
@@ -36,5 +36,5 @@ class Solution:
 
             res = list()
             preorder(root)
-            return res"""
+            return res
 
