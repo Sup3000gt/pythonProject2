@@ -53,9 +53,12 @@ class BinaryTreeNode:
         # Deleting element 删除元素
         # Searching for an element 查找元素
         # Traversing the tree 树的遍历
-                # Pre-order Traversal 前序遍历
-                # In-order Traversal 中序遍历
-                # Post-order Traversal 后序遍历
+                # 三种最常用的遍历
+                    # Pre-order Traversal 前序遍历
+                    # In-order Traversal 中序遍历
+                    # Post-order Traversal 后序遍历
+                # 一种单独的遍历
+                    # Level Order Traversal 层次遍历
 # Auxiliary operation of Tree
         # Finding the size of tree
         # Finding the height of tree
