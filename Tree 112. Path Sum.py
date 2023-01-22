@@ -32,7 +32,7 @@ class Solution:
 
 
 """ 
-    这是递归的精简写法
+    这是递归的精简写法，这个写法是从root开始加上去 看到叶子节点的时候 总和是不是等于目标值
         class Solution:
             def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
                 def dfs(root, currSum):
@@ -45,4 +45,16 @@ class Solution:
                     return (dfs(root.left, currSum) or dfs(root.right, currSum)) 递归来分别处理左子树和右子树
 
                 return dfs(root, 0) 最后返回 函数dfs(root,currSum 因为currSum初始值是0)
+   
+    这也是精简写法 这个写法是从root开始到叶子 一直减下去 看最后叶子节点的值是否等于剩余值
+    class Solution(object):
+    def hasPathSum(self, root, sum):
+        if not root: 如果参数不是root 直接返回False
+            return False
+        if not root.left and not root.right: 如果没有左右孩子 说明是叶子节点了 直接判定sum 是否等于root.val
+            return sum == root.val
+        return self.hasPathSum(root.left, sum - root.val) or self.hasPathSum(root.right, sum - root.val)
+        最后递归里面的参数 分别是 左右的子树 和 sum-root.val
+
+                
 """
