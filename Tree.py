@@ -4,6 +4,12 @@
 # Each node can have an arbitrary number of child node. 每个节点都可以有多个子节点
 
 
+# Depth of the Tree 树的深度 任意一个节点到根部的距离 距离根越远，深度越高 （从1开始）
+# 求深度用前序遍历
+#       一棵树高度就是他的最大深度
+# Height of the Tree 树的高度 从叶子节点到根部的距离 （从1开始）
+# 求高度用后序遍历
+
 # 树的种类
 # Binary Tree 二叉树，二叉树是每个节点最多有两个子树的树结构
         # 二叉树特点：

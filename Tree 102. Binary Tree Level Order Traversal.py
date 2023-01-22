@@ -13,7 +13,6 @@ class Solution:
 
         from collections import deque  # import 队列
         que = deque([root])  # 创建一个队列，并且把root也就是根加入到队列里
-
         while que:  # 循环一直到队列为空
             size = len(que)  # 设一个变量size用来统计当层一共有多少个node,例如起始只有root,size就是1
             temp_result = []  # 设一个局部变量的临时列表 用来统计每一层的node的值
