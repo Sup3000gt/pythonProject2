@@ -16,7 +16,7 @@ class Solution:
         stack = [root] #新建一个栈, root = [1,null,2,3]
         result = []    #建立一个list用于存储数据
         while  stack: #当stack不为空的时候
-            node = stack.pop() #访问根节点，直接进行操作(输出到数组)
+            node = stack.pop() #访问根节点，直接进行操作(输出到数组) 注意：node = stack.pop()会把stack里面的root弹出去
             result.append(node.val)
             if node.right:      # 先入栈右节点
                 stack.append(node.right)
@@ -25,9 +25,12 @@ class Solution:
         return result       # 最后返回 result
 
     # 方法2:递归
+    # 中序遍历：打印 - 左 - 右
+    # 终止条件：当前节点为空时
+    # 函数内：递归的调用左节点，打印当前节点，再递归调用右节点
     class Solution:
         def preorderTraversal(self, root: TreeNode) -> List[int]:
-            def preorder(root: TreeNode):
+            def preorder(root: TreeNode): # 打印 -- 左 -- 右 的方式遍历
                 if not root:
                     return
                 res.append(root.val)
