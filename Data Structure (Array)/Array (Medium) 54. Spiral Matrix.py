@@ -26,3 +26,5 @@ class Solution:
             left, right, top, bottom = left + 1, right - 1, top + 1, bottom - 1
             # 当跑完了一整个大循环之后, 左和上分别加1, 右和下分别减1.
         return final_list
+        # 时间复杂度 O(mn),m和n 分别为矩阵的行数和列数。矩阵中的每个元素都要被访问一次。
+        # 空间复杂度 O(1),除了输出数组以外, 空间复杂度是常数
