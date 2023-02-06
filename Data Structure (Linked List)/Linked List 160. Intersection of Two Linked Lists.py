@@ -44,9 +44,10 @@ class Solution:
         while curA != curB:                                 # 当A和B指针指向不同的值的时候
             curA = headB if curA == None else curA.next     # 如果 链表还没空，就把指针右移一格
             curB = headA if curB == None else curB.next     # 如果链表空了 那么就把指针指向另一个链表的头部
-
-        return curA                                         # 最后返还curA的位置，如果while没跑完就结束 说明找到相交了跳出循环
-                                                            # 返还位置， 如果 循环跑完 那么curA就等于None 返回没有相交
+                                                            # 这样循环下去,一定会出现2个指针同时指向None的情况. 如果出现这样的情况
+                                                            # 那么说明 没有intersection. 不然指针一定会在循环结束前的某一个点找到
+                                                            # intersection的位置
+        return curA                                         # 如果循环没跑完就结束 说明有相交点, 不然就会等2个链表同时跑完 返回None
 
 
 
