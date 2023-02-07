@@ -1,6 +1,6 @@
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        #解法1
+        """#解法1
         if len(ransomNote) > len(magazine): #如果ransomeNote比magazine长 ，那直接返回False
             return False
         else:
@@ -9,10 +9,10 @@ class Solution:
                     return False
                 else: #如果在 那就把那个字符串替换为"", string.replace(oldvalue, newvalue, count)
                     magazine = magazine.replace(char,"",1)
-        return True
+        return True"""
 
 
-"""     解法2：
+# 解法2：
         if len(magazine) < len(ransomNote):
             return False
         counter = {}  # 创建空的哈希表
@@ -28,7 +28,7 @@ class Solution:
             else: #如果在哈希表中，但是counter[j]的数值已经比1小了，也就是说是0了，那么我们也没有足够的数量完成construction
                 return False #例如 magazine = "aa", 但是ransomNote = "aaa" 此时我们需要3个a，但是我们只有2个a
         return True #如果以上全错误判定全没生效 那么返回True
-"""
+
 """        解法3:
         m = list(magazine) 把2个字符串都变成list
         r = list(ransomNote)
