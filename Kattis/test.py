@@ -1,12 +1,8 @@
-def study_time(total_pages, pages_per_session, your_speed, meowth_speed):
-    time = 0
-    for i in range(1, total_pages + 1, pages_per_session + 1):
-        if i + pages_per_session <= total_pages:
-            time += pages_per_session * your_speed
-        else:
-            time += (total_pages - i + 1) * your_speed
-        if (i-1) % (pages_per_session + 1) == 0 and i + pages_per_session <= total_pages:
-            time += pages_per_session * meowth_speed
-    return time
+def reading_time(N, P, X, Y):
+    pages = (P-1) // N + 1
+    your_time = P * X
+    their_time = (pages-1) // N * Y
+    return your_time + their_time
 
-print(study_time(3,14,2,5))
+n, p, x, y = map(int, input().split())
+print(reading_time(n, p, x, y))
