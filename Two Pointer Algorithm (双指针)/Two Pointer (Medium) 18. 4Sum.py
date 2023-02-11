@@ -27,3 +27,7 @@ class Solution:
                         p += 1      # 最后 左右指针 各移一位
                         q -= 1
         return res
+
+# 四数之和的双指针解法是两层for循环nums[k] + nums[i]为确定值，依然是循环内有left和right下标作为双指针，
+# 找出nums[k] + nums[i] + nums[left] + nums[right] == target的情况，三数之和的时间复杂度是O(n^2)，四数之和的时间复杂度是O(n^3) 。
+# 那么一样的道理，五数之和、六数之和等等都采用这种解法。
