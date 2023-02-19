@@ -54,7 +54,7 @@ class Solution:
             return -1
 
 或者 haystack.find(needle)
-
+当然这样写 这道题也就失去了意义了
 也可以 遍历一次主串， 然后 从 i 到 i+模式串的长度 来查看是否等于 模式串
 如果等于返回 i ，当然这种解法 会比较慢      
         for i in range(len(haystack)):
