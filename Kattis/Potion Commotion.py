@@ -1,32 +1,29 @@
-# import sys
-#
-# N, M, P = map(int, input().split())
-# attack = input().split()
-# int_attack =[int(num) for num in attack]
-# Total = 0
-# for i in range (M):
-#     Total += int(attack[i])
-#     if int_attack[i] >= N or N + P*20 <= Total:
-#         print("next time")
-#         sys.exit()
-# for i in range (M):
-#     if i != M:
-#         if N-int_attack[i] < int_attack[i+1] and P >= 1:
-#             P -= 1
-# print("champion")
+import sys
 
+MaxHealth, M, Potion = map(int, input().split())
+attack = input().split()
+int_attack =[int(num) for num in attack]
 
-N, M, P = map(int, input().split())
-attack_damages = list(map(int, input().split()))
+currentHealth = MaxHealth
 
-current_health = N
-for damage in attack_damages:
-    while damage > current_health and P > 0:
-        P -= 1
-        current_health += 20
-    current_health -= damage
-    if current_health <= 0:
+for i in range(M):
+    if int_attack[i] >= MaxHealth:      # if any attack is greater than our maxHP, then we lost
         print("next time")
-        break
-else:
-    print("champion")
+        sys.exit()
+    currentHealth -= int_attack[i]      # take HP off everytime
+    while i+1 <M and currentHealth <= int_attack[i+1]:  # if our HP is not enough to support us to take next attack
+        if Potion > 0:                                  # we start to use potion
+            currentHealth += 20
+            Potion -= 1
+            if currentHealth > MaxHealth:               # if potion is bigger than maxHP, then we set our currentHP
+                currentHealth = MaxHealth               # to MaxHP
+        else:                                           # otherwise means we don't have enough potion, we lost
+            print("next time")
+            sys.exit()
+print("champion")                                       # if we complete the whole loop, without lost, we win
+
+
+
+
+
+
