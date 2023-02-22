@@ -32,7 +32,9 @@ class Solution:
             res.append(que.front())  # 把目前队列中的最大值记录下来 保存到result里面
         return res  # 返回 res 列表
 
-# 简易版写法
+
+"""
+简易版写法
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         dq = deque()    # 创建一个 双向队列
@@ -52,3 +54,4 @@ class Solution:
             dq.append(n)                # 直到 队列中没有比n小的元素了，那么把n加入到队列
             res.append(dq[0])           # 然后 用res记录 当前队列最大值，然后r+1开始下一次循环直至结束
         return res                      # 最后返还 res
+"""
