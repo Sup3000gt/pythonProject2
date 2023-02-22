@@ -1,8 +1,8 @@
 class Solution:
     def simplifyPath(self, path: str) -> str:
-        names = path.split("/")             # 首先用split把路径区分
+        directory = path.split("/")         # 首先用split把路径区分
         stack = []                          # 创建一个栈
-        for name in names:                  # 遍历整个路径
+        for name in directory:              # 遍历整个路径
             if name == "..":                # 如路径是 ".." 说明我们要返回上级目录
                 if stack:                   # 先确定栈是否为空，如果不是就把栈顶弹出
                     stack.pop()             # 等于返回上级目录
