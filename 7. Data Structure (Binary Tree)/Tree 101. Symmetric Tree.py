@@ -27,6 +27,7 @@ class Solution:
         # 此时才做递归，做下一层的判断
         outside = self.compare(left.left, right.right)  # 左子树：左、 右子树：右
         inside = self.compare(left.right, right.left)  # 左子树：右、 右子树：左
+        # 如果左右都对称就返回true ，有一侧不对称就返回false
         isSame = outside and inside  # 左子树：中、 右子树：中 （逻辑处理）
         return isSame  # 最后把isSame的值返还给compare
 

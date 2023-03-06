@@ -5,6 +5,9 @@ class Node:
         self.val = val
         self.children = children
 """
+import collections
+
+
 # 这一题就是层序遍历的变种
 class Solution:
     def maxDepth(self, root: 'Node') -> int:

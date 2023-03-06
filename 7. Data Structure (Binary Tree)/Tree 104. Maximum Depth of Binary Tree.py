@@ -6,6 +6,7 @@
 #         self.right = right
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
+        # 解法1 递归
         def getHeight(root): # 用后序遍历 来实现的递归
             if root == None: #如果 root是空 返回0
                 return 0
@@ -16,12 +17,12 @@ class Solution:
         return getHeight(root)
 
                     # 上面三行代码可以精简成一行
-                    # return 1 + max(self.maxdepth(root.left), self.maxdepth(root.right)
+                    # return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right)
                     # 这也是用的递归 只不过是精简版
 
     # 如果用迭代法来写，那么就使用层序遍历
-    import collections
     class solution:
+        # 解法2 迭代
         def maxdepth(self, root: treenode) -> int:
             if not root: #如果None 返回0
                 return 0
@@ -31,11 +32,11 @@ class Solution:
             while queue:                            # 当队列不为空的时候
                 size = len(queue)                   # 创建一个变量来记录每层队列的长度
                 depth += 1                          # 每一次循环 深度+1
-                for i in range(size):               # 内循环 循环队列的长度
-                    node = queue.popleft()
-                    if node.left:
+                for i in range(size):               # 内循环 循环队列的长度等于 size也就是队列的长度
+                    node = queue.popleft()          # 把当前节点弹出
+                    if node.left:                   # 如果当前节点有子节点，就把子节点都加入到队列的后面
                         queue.append(node.left)
-                    if node.right:
+                    if node.right:                  # 如果当前节点有子节点，就把子节点都加入到队列的后面
                         queue.append(node.right)
             return depth                            # 最后返回深度
 
